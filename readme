@@ -1,0 +1,18 @@
+[图灵图书].Django基础教程
+
+使用django1.11.29版本
+
+创建 Django 项目
+执行 python django-admin.py startproject <name> 命令，其中 <name> 是想创建的项目名
+称。
+
+
+创建 Django 应用
+1 执行 python manage.py startapp <appname> 命令，其中 <appname> 是想创建的应用名称。
+2 把应用名称添加到项目配置目录中的 settings.py 文件里，放到 INSTALLED_APPS 列表的末
+尾，告诉 Django 项目这个应用的存在。
+3 在项目的 urls.py 文件中添加一个映射，指向新建的应用。
+4 在应用的目录中新建 urls.py 文件，把入站 URL 与视图对应起来。
+5 在应用的 view.py 文件中编写所需的视图，确保视图返回一个 HttpResponse 对象。
+
+
