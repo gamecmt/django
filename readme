@@ -16,3 +16,23 @@
 5 在应用的 view.py 文件中编写所需的视图，确保视图返回一个 HttpResponse 对象。
 
 
+添加模型
+添加模型的过程可以分为以下 5 步。
+首先在 Django 应用的 models.py 文件中定义模型。
+更新 admin.py，注册新增的模型。
+生成迁移：python manage.py makemigrations <app_name>。
+运行迁移：python manage.py migrate。在数据库中创建模型所需的表和字段。
+创建或编辑填充脚本。
+
+
+有时你可能想删除数据库，重头再来。具体步骤如下。注意，本书使用的是 SQLite 数据库，此外
+Django 还支持其他数据库引擎。
+如果 Django 开发服务器正在运行，停止。
+如果使用的是 SQLite 数据库，删除 Django 项目根目录中的 db.sqlite3 文件。这个文件与
+manage.py 脚本位于同一级目录中。
+如果修改过应用的模型，执行 python manage.py makemigrations <app_name> 命令，记得把
+<app_name> 替换成 Django 应用的名称（例如 rango。）如果未修改模型，跳过这一步。
+执行 python manage.py migrate 命令，新建数据库文件（使用 SQLite 的话），并创建数据
+库表。
+执行 python manage.py createsuperuser 命令，创建一个超级用户。
+最后，运行填充脚本，在新数据库中插入可信的测试数据。
